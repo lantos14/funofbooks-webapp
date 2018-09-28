@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/styles.scss';
-// import 'bulma/css/bulma.css';
+import 'bulma/css/bulma.css';
 
 export class Footer extends Component {
   render() {

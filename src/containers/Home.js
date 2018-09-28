@@ -8,7 +8,7 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <div id='wrapper'>
+      <div id='home'>
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
         <Content></Content>
         <Footer></Footer>
