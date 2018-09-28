@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
 import PropTypes from 'prop-types';
-// import '../style/style.css';
-// import history from '../history';
+import '../../styles/styles.scss';
+import { history } from '../../store/configureStore';
 
 export class BookCard extends Component {
 
   handleOnClick = () => {
-    // history.push('/review');
+    history.push('/review');
   }
 
   render() {
@@ -36,5 +36,5 @@ export class BookCard extends Component {
 BookCard.propTypes = {
   imgSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired
+  content: PropTypes.string.isRequired,
 };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import history from '../history';
+import { history } from '../../store/configureStore';
 import '../../styles/styles.scss';
 import 'bulma/css/bulma.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export class SideButton extends Component {
   
   handleOnClick = () => {
-    // history.push('/overview');
+    history.push('/');
   }
 
   render() {
