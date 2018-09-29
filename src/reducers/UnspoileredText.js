@@ -1,11 +1,12 @@
-export default function testReducer(state = {
+export default function unspoileredText(state = {
   text: 'waiting for update'
 }, action) {
+  console.log('reducer is in action');
   switch (action.type) {
-    case 'ACTION_TEST_INITIATED': {
+    case 'UNSPOILERED_TEXT_REQUESTED': {
       return {
         ...state,
-        text: action.payload,
+        text: 'success',
       };
     }
 

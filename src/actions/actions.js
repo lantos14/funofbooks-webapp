@@ -10,9 +10,9 @@ export function example(settings) {
   };
 }
 
-export function testAction(msg) {
+export function getUnspoileredText() {
+  console.log('unspoil action started');
   return {
-    type: 'ACTION_TEST_INITIATED',
-    payload: msg,
+    type: 'UNSPOILERED_TEXT_REQUESTED',
   };
 } 
