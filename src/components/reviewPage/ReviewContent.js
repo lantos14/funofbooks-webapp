@@ -31,7 +31,6 @@ export class ReviewContent extends Component {
             </div>
           </div>
         </div>
-        <button onClick={() => this.testFunc()}>Test Action</button>
       </div>
     );
   }
