@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-// import { ReviewContent } from '../components/reviewContent';
+import { ReviewContent } from '../components/reviewPage/ReviewContent';
 
 export default class ReviewPage extends Component {
   render() {
     return (
       <div id="review-page">
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
-        {/* <ReviewContent></ReviewContent> */}
+        <ReviewContent></ReviewContent>
         <Footer />
       </div>
     );
