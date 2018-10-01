@@ -40,4 +40,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(ReviewContent));
+)(withRouter(ReviewPage));
