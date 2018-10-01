@@ -1,12 +1,11 @@
 export default function unspoileredText(state = {
-  text: 'waiting for update'
+  storyData: {}
 }, action) {
-  console.log('reducer is in action');
   switch (action.type) {
-    case 'UNSPOILERED_TEXT_REQUESTED': {
+    case 'UNSPOILERED_TEXT_SUCCEEDED': {
       return {
         ...state,
-        text: 'success',
+        storyData: action.payload,
       };
     }
 

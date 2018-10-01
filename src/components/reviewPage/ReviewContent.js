@@ -4,7 +4,6 @@ import '../../styles/styles.scss';
 import { SideBar } from '../home/SideBar';
 import { ReviewTab } from './ReviewTab';
 import { ReviewText } from './ReviewText';
-// import { simpleAction } from '../actions/actions'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -27,7 +26,7 @@ export class ReviewContent extends Component {
           <div className="column review">
             <div className="card">
               <ReviewTab handleChange={this.handleChange}></ReviewTab>
-              <ReviewText></ReviewText>
+              <ReviewText article={this.props.article[0]}></ReviewText>
             </div>
           </div>
         </div>
@@ -36,14 +35,12 @@ export class ReviewContent extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  ...state
-})
-
-const mapDispatchToProps = {
-};
+function mapStateToProps(state) {
+  return {
+    article: state.unspoileredText.storyData,
+  };
+}
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
 )(withRouter(ReviewContent));

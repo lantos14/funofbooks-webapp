@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 export class ReviewPage extends Component {
 
   componentDidMount() {
-    console.log('component mounted');
     this.props.getUnspoileredText();
   }
 
@@ -18,7 +17,7 @@ export class ReviewPage extends Component {
     return (
       <div id="review-page">
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
-        <ReviewContent></ReviewContent>
+        <ReviewContent article={this.props.article}></ReviewContent>
         <Footer />
       </div>
     );
@@ -27,10 +26,11 @@ export class ReviewPage extends Component {
 
 ReviewPage.propTypes = {
   getUnspoileredText: PropTypes.func.isRequired,
+  // article: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = state => ({
-  ...state
+  article: state.unspoileredText.storyData,
 })
 
 const mapDispatchToProps = {

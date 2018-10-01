@@ -11,7 +11,6 @@ export function example(settings) {
 }
 
 export function getUnspoileredText() {
-  console.log('unspoil action started');
   return {
     type: 'UNSPOILERED_TEXT_REQUESTED',
   };
