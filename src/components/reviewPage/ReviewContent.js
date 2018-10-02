@@ -19,6 +19,7 @@ export class ReviewContent extends Component {
   }
 
   render() {
+    const { article } = this.props;
     return (
       <div className="review content">
         <div className="content columns is-link">
@@ -26,7 +27,7 @@ export class ReviewContent extends Component {
           <div className="column review">
             <div className="card">
               <ReviewTab handleChange={this.handleChange}></ReviewTab>
-              <ReviewText article={this.props.article[0]}></ReviewText>
+              <ReviewText article={article}></ReviewText>
             </div>
           </div>
         </div>

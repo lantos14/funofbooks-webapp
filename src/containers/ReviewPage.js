@@ -3,34 +3,35 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ReviewContent } from '../components/reviewPage/ReviewContent';
 import { getUnspoileredText } from '../actions/actions'
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 export class ReviewPage extends Component {
+  state = {
+    article: '',
+  }
 
-  componentDidMount() {
-    this.props.getUnspoileredText();
+  async componentDidMount() {
+    await this.props.getUnspoileredText();
+
+    this.setState({
+      article: this.props.article,
+    });
   }
 
   render() {
+    const { article } = this.props;
     return (
       <div id="review-page">
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
-        <ReviewContent article={this.props.article}></ReviewContent>
+        <ReviewContent article={article}></ReviewContent>
         <Footer />
       </div>
     );
   }
 }
 
-ReviewPage.propTypes = {
-  getUnspoileredText: PropTypes.func.isRequired,
-  // article: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
-const mapStateToProps = state => ({
-  article: state.unspoileredText.storyData,
+const mapStateToProps = store => ({
+  article: store.unspoileredText.storyData[0],
 })
 
 const mapDispatchToProps = {
@@ -40,4 +41,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(ReviewPage));
+)(ReviewPage);
