@@ -6,13 +6,14 @@ import { SideBar } from './SideBar';
 
 export class Content extends Component {
   render() {
+    const { article } = this.props;
     return (
       <div id='main-content'>
-      <div className='content columns is-link'>
-        <SideBar></SideBar>
-        <Shelf></Shelf>
+        <div className='content columns is-link'>
+          <SideBar></SideBar>
+          <Shelf article={article}></Shelf>
+        </div>
       </div>
-    </div>
     );
   }
 }
