@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 export class ReviewPage extends Component {
   state = {
     article: '',
+    selectedBook: '',
   }
 
   async componentDidMount() {
@@ -19,7 +20,7 @@ export class ReviewPage extends Component {
   }
 
   render() {
-    const { article } = this.props;
+    const article = this.props.article[this.props.selectedBook];
     return (
       <div id="review-page">
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
@@ -31,7 +32,8 @@ export class ReviewPage extends Component {
 }
 
 const mapStateToProps = store => ({
-  article: store.unspoileredText.storyData[0],
+  article: store.unspoileredText.storyData,
+  selectedBook: store.unspoileredText.selectedBook,
 })
 
 const mapDispatchToProps = {

@@ -15,3 +15,10 @@ export function getUnspoileredText() {
     type: 'UNSPOILERED_TEXT_REQUESTED',
   };
 } 
+
+export function updateReviewedBook(bookId) {
+  return {
+    type: 'UPDATED_REVIEWED_BOOK_REQUESTED',
+    payload: bookId,
+  };
+} 

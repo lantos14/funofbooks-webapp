@@ -6,13 +6,14 @@ import { history } from '../../store/configureStore';
 
 export class BookCard extends Component {
 
-  handleOnClick = () => {
+  handleOnClick = (e) => {
+    this.props.updateReviewedBook(e.currentTarget.id);
     history.push('/review');
   }
 
   render() {
     return (
-      <div className="column is-one-third card" onClick={this.handleOnClick}>
+      <div id={this.props.bookIndex}className="column is-one-third card" onClick={this.handleOnClick}>
         <div className="card-image">
           <div className="book-image image is-4by3">
             <img src={this.props.imgSrc} alt="test"></img>
