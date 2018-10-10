@@ -12,7 +12,7 @@ export class BookCard extends Component {
   }
 
   render() {
-    const { bookIndex, imgSrc, title, content} = this.props;
+    const { bookIndex, imgSrc, title, content } = this.props;
     return (
       <div id={bookIndex} className="column is-one-third card" onClick={this.handleOnClick}>
         <div className="card-image">
@@ -27,8 +27,8 @@ export class BookCard extends Component {
             </div>
           </div>
           <div className="content">
-          <p>{content}</p>
-    </div>
+            <p>{content}</p>
+          </div>
         </div>
       </div>
     );

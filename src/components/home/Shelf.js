@@ -11,7 +11,7 @@ export class Shelf extends Component {
       <div id='main' className='columns column is-multiline main is-three-quarter'>
         {
           bookList.map((book, i) =>
-            <BookCard key={i} updateReviewedBook={updateReviewedBook} bookIndex={i} imgSrc="https://bit.ly/2Oj1Vh1" title={book.title} content="Content kell a DB-be"></BookCard>
+            <BookCard key={i} updateReviewedBook={updateReviewedBook} bookIndex={i} imgSrc={book.imgSrc} title={book.title} content={book.description}></BookCard>
           )
         }
       </div>
