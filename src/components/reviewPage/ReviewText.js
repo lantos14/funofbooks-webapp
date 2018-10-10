@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../../styles/styles.scss';
 import 'bulma/css/bulma.css';
 
 export class ReviewText extends Component {
-
-  componentDidMount() {
-    console.log('reviewText mounted');
-  }
 
   render() {
     const { article } = this.props;
@@ -22,3 +19,7 @@ export class ReviewText extends Component {
     );
   }
 }
+
+ReviewText.propTypes = {
+  article: PropTypes.object.isRequired,
+};

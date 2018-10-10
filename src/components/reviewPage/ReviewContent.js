@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import 'bulma/css/bulma.css';
 import '../../styles/styles.scss';
 import { SideBar } from '../home/SideBar';
@@ -35,6 +36,10 @@ export class ReviewContent extends Component {
     );
   }
 }
+
+ReviewContent.propTypes = {
+  article: PropTypes.object.isRequired,
+};
 
 function mapStateToProps(state) {
   return {
