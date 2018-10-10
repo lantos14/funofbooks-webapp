@@ -12,21 +12,22 @@ export class BookCard extends Component {
   }
 
   render() {
+    const { bookIndex, imgSrc, title, content} = this.props;
     return (
-      <div id={this.props.bookIndex}className="column is-one-third card" onClick={this.handleOnClick}>
+      <div id={bookIndex} className="column is-one-third card" onClick={this.handleOnClick}>
         <div className="card-image">
           <div className="book-image image is-4by3">
-            <img src={this.props.imgSrc} alt="test"></img>
+            <img src={imgSrc} alt="test"></img>
           </div>
         </div>
         <div className="card-content">
           <div className="media">
             <div className="media-content">
-              <p className="title is-4">{this.props.title}</p>
+              <p className="title is-4">{title}</p>
             </div>
           </div>
           <div className="content">
-            {this.props.content}
+          <p>{content}</p>
     </div>
         </div>
       </div>
@@ -35,6 +36,8 @@ export class BookCard extends Component {
 }
 
 BookCard.propTypes = {
+  updateReviewedBook: PropTypes.func.isRequired,
+  bookIndex: PropTypes.number.isRequired,
   imgSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,

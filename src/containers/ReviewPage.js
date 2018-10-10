@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ReviewContent } from '../components/reviewPage/ReviewContent';
@@ -26,6 +27,12 @@ export class ReviewPage extends Component {
     );
   }
 }
+
+ReviewPage.propTypes = {
+  getBooks: PropTypes.func.isRequired,
+  bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  selectedBook: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = store => ({
   bookList: store.BookList.Books,

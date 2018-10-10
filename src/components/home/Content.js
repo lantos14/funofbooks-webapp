@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../../styles/styles.scss';
 import 'bulma/css/bulma.css';
 import { Shelf } from './Shelf';
@@ -17,3 +18,8 @@ export class Content extends Component {
     );
   }
 }
+
+Content.propTypes = {
+  updateReviewedBook: PropTypes.func.isRequired,
+  bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

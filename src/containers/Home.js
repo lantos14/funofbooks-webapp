@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Header } from '../components/Header';
 import { Content } from '../components/home/Content';
 import { Footer } from '../components/Footer';
@@ -26,6 +27,12 @@ export class Home extends Component {
     )
   }
 }
+
+Home.propTypes = {
+  getBooks: PropTypes.func.isRequired,
+  updateReviewedBook: PropTypes.func.isRequired,
+  bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 const mapStateToProps = store => ({
   bookList: store.BookList.Books,
