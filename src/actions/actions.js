@@ -10,15 +10,15 @@ export function example(settings) {
   };
 }
 
-export function getUnspoileredText() {
+export function getBooks() {
   return {
-    type: 'UNSPOILERED_TEXT_REQUESTED',
+    type: 'BOOKLIST_REQUESTED',
   };
 } 
 
 export function updateReviewedBook(bookId) {
   return {
-    type: 'UPDATED_REVIEWED_BOOK_REQUESTED',
+    type: 'REVIEWED_BOOK_UPDATED',
     payload: bookId,
   };
 } 

@@ -1,15 +1,15 @@
-export default function unspoileredText(state = {
-  storyData: [],
+export default function BookList(state = {
+  Books: [],
   selectedBook: '',
 }, action) {
   switch (action.type) {
-    case 'UNSPOILERED_TEXT_SUCCEEDED': {
+    case 'BOOKLIST_SUCCEEDED': {
       return {
         ...state,
-        storyData: action.payload,
+        Books: action.payload,
       };
     }
-    case 'UPDATED_REVIEWED_BOOK_REQUESTED': {
+    case 'REVIEWED_BOOK_UPDATED': {
       return {
         ...state,
         selectedBook: action.payload,

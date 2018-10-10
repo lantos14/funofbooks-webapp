@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import unspoileredText from './UnspoileredText';
+import BookList from './BookList';
 
 const rootReducer = combineReducers({
-  unspoileredText,
+  BookList,
 });
 
 export default rootReducer;

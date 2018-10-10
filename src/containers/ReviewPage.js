@@ -2,25 +2,25 @@ import React, { Component } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ReviewContent } from '../components/reviewPage/ReviewContent';
-import { getUnspoileredText } from '../actions/actions'
+import { getBooks } from '../actions/actions'
 import { connect } from 'react-redux';
 
 export class ReviewPage extends Component {
   state = {
-    article: '',
+    bookList: '',
     selectedBook: '',
   }
 
   async componentDidMount() {
-    await this.props.getUnspoileredText();
+    await this.props.getBooks();
 
     this.setState({
-      article: this.props.article,
+      bookList: this.props.bookList,
     });
   }
 
   render() {
-    const article = this.props.article[this.props.selectedBook];
+    const article = this.props.bookList[this.props.selectedBook];
     return (
       <div id="review-page">
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
@@ -32,12 +32,12 @@ export class ReviewPage extends Component {
 }
 
 const mapStateToProps = store => ({
-  article: store.unspoileredText.storyData,
-  selectedBook: store.unspoileredText.selectedBook,
+  bookList: store.BookList.Books,
+  selectedBook: store.BookList.selectedBook,
 })
 
 const mapDispatchToProps = {
-  getUnspoileredText,
+  getBooks,
 };
 
 export default connect(

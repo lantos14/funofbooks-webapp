@@ -6,12 +6,12 @@ import { SideBar } from './SideBar';
 
 export class Content extends Component {
   render() {
-    const { article, updateReviewedBook } = this.props;
+    const { bookList, updateReviewedBook } = this.props;
     return (
       <div id='main-content'>
         <div className='content columns is-link'>
           <SideBar></SideBar>
-          <Shelf article={article} updateReviewedBook={updateReviewedBook}></Shelf>
+          <Shelf bookList={bookList} updateReviewedBook={updateReviewedBook}></Shelf>
         </div>
       </div>
     );

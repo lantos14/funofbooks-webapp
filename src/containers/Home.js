@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { Header } from '../components/Header';
 import { Content } from '../components/home/Content';
 import { Footer } from '../components/Footer';
-import { getUnspoileredText, updateReviewedBook } from '../actions/actions'
+import { getBooks, updateReviewedBook } from '../actions/actions'
 import { connect } from 'react-redux';
 import '../styles/styles.scss';
 
 export class Home extends Component {
   state = {
-    article: '',
+    bookList: [],
   }
 
   async componentDidMount() {
-    await this.props.getUnspoileredText();
+    await this.props.getBooks();
 
     this.setState({
       article: this.props.article,
@@ -20,11 +20,11 @@ export class Home extends Component {
   }
 
   render() {
-    const { article } = this.props;
+    const { bookList } = this.props;
     return (
       <div id='home'>
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
-        <Content article={article} updateReviewedBook={this.props.updateReviewedBook}></Content>
+        <Content bookList={bookList} updateReviewedBook={this.props.updateReviewedBook}></Content>
         <Footer></Footer>
       </div>
     )
@@ -32,11 +32,11 @@ export class Home extends Component {
 }
 
 const mapStateToProps = store => ({
-  article: store.unspoileredText.storyData,
+  bookList: store.BookList.Books,
 })
 
 const mapDispatchToProps = {
-  getUnspoileredText,
+  getBooks,
   updateReviewedBook,
 };
 
