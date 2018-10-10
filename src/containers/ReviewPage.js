@@ -11,12 +11,8 @@ export class ReviewPage extends Component {
     selectedBook: '',
   }
 
-  async componentDidMount() {
-    await this.props.getBooks();
-
-    this.setState({
-      bookList: this.props.bookList,
-    });
+  componentDidMount() {
+    this.props.getBooks();
   }
 
   render() {

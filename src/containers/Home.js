@@ -11,12 +11,8 @@ export class Home extends Component {
     bookList: [],
   }
 
-  async componentDidMount() {
-    await this.props.getBooks();
-
-    this.setState({
-      article: this.props.article,
-    });
+  componentDidMount() {
+    this.props.getBooks();
   }
 
   render() {
