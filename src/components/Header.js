@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../images/title-gold.png'
 import 'bulma/css/bulma.css';
 
 export class Header extends Component {
@@ -9,7 +8,8 @@ export class Header extends Component {
         <section className='hero is-small'>
           <div className='hero-body'>
             <div className='container'>
-              <img src={logo} alt="FunOfBooks title"/>
+              <h1>FunOfBooks</h1>
+              <h2>Mert egy jó könyv mindenkinek jár</h2>
             </div>
           </div>
         </section>

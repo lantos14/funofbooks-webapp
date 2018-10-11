@@ -20,6 +20,7 @@ export class Home extends Component {
     const { bookList } = this.props;
     return (
       <div id='home'>
+        <div className="background"></div>
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
         <Content bookList={bookList} updateReviewedBook={this.props.updateReviewedBook}></Content>
         <Footer></Footer>

@@ -20,6 +20,7 @@ export class ReviewPage extends Component {
     const article = this.props.bookList[this.props.selectedBook];
     return (
       <div id="review-page">
+        <div className="background"></div>
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
         <ReviewContent article={article}></ReviewContent>
         <Footer />
