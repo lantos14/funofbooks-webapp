@@ -10,7 +10,7 @@ export class Content extends Component {
     const { bookList, updateReviewedBook } = this.props;
     return (
       <div id='main-content'>
-        <div className='content columns is-link'>
+        <div className='home-content'>
           <SideBar></SideBar>
           <Shelf bookList={bookList} updateReviewedBook={updateReviewedBook}></Shelf>
         </div>

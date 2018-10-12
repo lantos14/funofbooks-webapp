@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import 'bulma/css/bulma.css';
 import '../../styles/styles.scss';
 import { SideBar } from '../home/SideBar';
-import { ReviewTab } from './ReviewTab';
 import { ReviewText } from './ReviewText';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -23,11 +22,11 @@ export class ReviewContent extends Component {
     const { article } = this.props;
     return (
       <div className="review content">
+        <SideBar></SideBar>
         <div className="content columns is-link">
-          <SideBar></SideBar>
           <div className="column review">
             <div className="card">
-              <ReviewTab handleChange={this.handleChange}></ReviewTab>
+              {/* <ReviewTab handleChange={this.handleChange}></ReviewTab> */}
               <ReviewText article={article}></ReviewText>
             </div>
           </div>
