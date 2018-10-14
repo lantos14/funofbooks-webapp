@@ -5,6 +5,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 
+const Dotenv = require('dotenv-webpack');
+
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
   __DEV__: false
@@ -53,7 +55,7 @@ export default {
       // To track JavaScript errors via TrackJS, sign up for a free trial at TrackJS.com and enter your token below.
       trackJSToken: ''
     }),
-
+    new Dotenv(),
   ],
   module: {
     rules: [

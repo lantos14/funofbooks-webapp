@@ -3,6 +3,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'; 
 
+const Dotenv = require('dotenv-webpack');
+
 export default {
   resolve: {
     extensions: ['*', '.js', '.jsx', '.json']
@@ -33,7 +35,8 @@ export default {
         collapseWhitespace: true
       },
       inject: true
-    })
+    }),
+    new Dotenv(),
   ],
   module: {
     rules: [
