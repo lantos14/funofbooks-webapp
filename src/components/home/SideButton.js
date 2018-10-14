@@ -13,28 +13,16 @@ export class SideButton extends Component {
 
   render() {
     return (
-      <div className="box" onClick={this.props.custom ? null : this.handleOnClick}>
+      <div className="box" onClick={this.handleOnClick}>
         <article className="media">
-
           <div className="media-left">
-
-            {this.props.custom ?
-              <a href="https://github.com/lantos14/funofbooks-webapp">
-                <img src="../../images/github-icon.svg" alt="github icon" height="36" width="24" />
-              </a>
-              : <FontAwesomeIcon className="is-medium" icon={this.props.icon} />}
-
+            <FontAwesomeIcon className="is-medium" icon={this.props.icon} />
           </div>
-
-          {this.props.text !== "" ?
-
-            <div className="media-content">
-              <div className="content">
-                <p>{this.props.text}</p>
-              </div>
+          <div className="media-content">
+            <div className="content">
+              <p>{this.props.text}</p>
             </div>
-            : null}
-
+          </div>
         </article>
       </div>
     );
@@ -44,9 +32,4 @@ export class SideButton extends Component {
 SideButton.propTypes = {
   icon: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  custom: PropTypes.bool,
 };
-
-SideButton.defaultProps = {
-  custom: false,
-}
