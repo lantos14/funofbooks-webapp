@@ -7,7 +7,7 @@ export class Footer extends Component {
     return (
       <footer className="footer">
         <div className="content has-text-centered">
-          <p><strong>FunOfBooks</strong> by Lute.</p>
+          <p><strong>FunOfBooks</strong> by lantos.</p>
         </div>
       </footer>
     );

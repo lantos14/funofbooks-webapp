@@ -7,7 +7,7 @@ export class LinkButton extends Component {
 
   render() {
     return (
-      <a target="_blank" href={this.props.link}>
+      <a target="_blank" rel="noopener noreferrer" href={this.props.link}>
       <div className="box" >
         <img src="../../images/github-icon.svg" width="32" height="24" />
       </div>

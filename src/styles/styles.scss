@@ -1,8 +1,5 @@
 // font imports
-@import url("https://fonts.googleapis.com/css?family=Poiret+One");
-@import url("https://fonts.googleapis.com/css?family=Corben:400,700");
-@import url("https://fonts.googleapis.com/css?family=Bitter");
-
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Arbutus+Slab|Corben');
 // variables
 $primary-color: rgba(66, 66, 66, 0.8);
 $secondary-color: radial-gradient(
@@ -14,6 +11,8 @@ $secondary-color: radial-gradient(
   #f9f9f9
 );
 
+$title-font: "Corben", cursive;
+$p-font: 'Arbutus Slab', serif;;
 // keyframes
 
 @keyframes slideInFromLeft {
@@ -28,7 +27,9 @@ $secondary-color: radial-gradient(
 // selectors
 
 body {
-  font-family: "Bitter", serif;
+  font-family: $p-font;
+  height: 100%;
+  position: absolute;
   .background {
     height: 100%;
     position: fixed;
@@ -41,6 +42,7 @@ body {
     filter: blur(3px);
     z-index: -1;
   }
+
   header {
     min-height: 300px;
     display: flex;
@@ -48,7 +50,7 @@ body {
     justify-content: center;
     h1 {
       font-size: 100px;
-      font-family: "Corben", cursive;
+      font-family: $title-font;
       color: white;
     }
     h2 {
@@ -63,6 +65,7 @@ body {
     }
   }
   #main-content {
+
     .home-content {
       display: flex;
       flex-direction: column;
@@ -74,6 +77,7 @@ body {
         justify-content: space-around;
         .card {
           animation: 1s ease-out 0s 1 slideInFromLeft;
+          min-width: 300px;
           cursor: pointer;
           padding: 6px;
           margin: 12px;
@@ -93,12 +97,16 @@ body {
               height: 130%;
             }
           }
+          p {
+            text-align: justify;
+          }
         }
       }
     }
   }
 
   .footer {
+    position: relative;
     max-height: 100px;
     background-color: rgba(0, 0, 0, 0.6);
     p {
