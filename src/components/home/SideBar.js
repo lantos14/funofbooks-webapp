@@ -8,7 +8,7 @@ export class SideBar extends Component {
     return (
       <div className='side' id='side'>
       <SideButton icon="book" text="Cikkek" ></SideButton>
-      <SideButton icon="question-circle" text="Rólam" ></SideButton>
+      <SideButton custom={true} icon="question-circle" text="" ></SideButton>
     </div>
     );
   }
