@@ -139,6 +139,15 @@ body {
         }
       }
     }
+
+    .link-button {
+      width: 70px;
+      height: 70px;
+      padding: 5px;
+      background-image: url("../images/github-mark.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
   }
 
   .review.content {
