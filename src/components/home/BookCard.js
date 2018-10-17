@@ -17,7 +17,7 @@ export class BookCard extends Component {
       <div id={bookIndex} className="column is-one-third card" onClick={this.handleOnClick}>
         <div className="card-image">
           <div className="book-image image is-4by3">
-            <img src={imgSrc} alt="test"></img>
+            <img src={imgSrc} alt={`${title}-cover`}></img>
           </div>
         </div>
         <div className="card-content">
