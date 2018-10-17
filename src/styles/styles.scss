@@ -87,9 +87,12 @@ body {
           min-width: 300px;
           cursor: pointer;
           padding: 6px;
-          margin: 12px;
+          margin: 30px;
           border-radius: 6px;
           box-shadow: 9px 10px 26px -1px rgba(102, 102, 102, 0.62);
+          @include media-breakpoint-up(md) {
+            margin: 12px;
+          }
           &:hover {
             filter: brightness(110%);
           }
