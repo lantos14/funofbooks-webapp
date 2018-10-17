@@ -1,5 +1,6 @@
-// font imports
-@import url('https://fonts.googleapis.com/css?family=Alegreya|Arbutus+Slab|Corben');
+// imports
+@import url("https://fonts.googleapis.com/css?family=Alegreya|Arbutus+Slab|Corben");
+@import "src/styles/breakpoints";
 // variables
 $primary-color: rgba(66, 66, 66, 0.8);
 $secondary-color: radial-gradient(
@@ -12,9 +13,8 @@ $secondary-color: radial-gradient(
 );
 
 $title-font: "Corben", cursive;
-$p-font: 'Arbutus Slab', serif;;
+$p-font: "Arbutus Slab", serif;
 // keyframes
-
 @keyframes slideInFromLeft {
   0% {
     transform: scale(0, 1);
@@ -23,9 +23,7 @@ $p-font: 'Arbutus Slab', serif;;
     transform: scale(1, 1);
   }
 }
-
 // selectors
-
 body {
   font-family: $p-font;
   height: 100%;
@@ -42,30 +40,39 @@ body {
     filter: blur(3px);
     z-index: -1;
   }
-
   header {
     min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     h1 {
-      font-size: 100px;
+      font-size: 50px;
       font-family: $title-font;
       color: white;
+
+      @include media-breakpoint-up(md) {
+        font-size: 100px;
+      }
     }
     h2 {
-      font-size: 30px;
+      font-size: 24px;
       color: white;
+      @include media-breakpoint-up(md) {
+        font-size: 30px;
+      }
     }
     .hero-body {
       background-color: rgba(0, 0, 0, 0.6);
       border-radius: 0 70px 70px 0px;
-      max-width: 1100px;
+      max-width: 900px;
       padding-left: 10%;
+      @include media-breakpoint-up(md) {
+        font-size: 30px;
+        max-width: 1100px;
+      }
     }
   }
   #main-content {
-
     .home-content {
       display: flex;
       flex-direction: column;
@@ -104,7 +111,6 @@ body {
       }
     }
   }
-
   .footer {
     position: relative;
     max-height: 100px;
@@ -116,7 +122,6 @@ body {
       }
     }
   }
-
   #side {
     display: flex;
     margin: 30px 0;
@@ -139,7 +144,6 @@ body {
         }
       }
     }
-
     .link-button {
       width: 70px;
       height: 70px;
@@ -149,7 +153,6 @@ body {
       background-size: contain;
     }
   }
-
   .review.content {
     display: flex;
     flex-direction: column;
