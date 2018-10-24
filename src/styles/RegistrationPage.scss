@@ -9,12 +9,10 @@ $secondary-color: radial-gradient(
 
 #reg-form {
   background-image: $secondary-color;
+  max-width: 500px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   margin: 20px 50px;
   padding: 20px 50px;
-  .control {
-    max-width: 400px;
-  }
 }
