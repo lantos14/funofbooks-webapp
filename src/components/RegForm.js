@@ -4,7 +4,6 @@ import '../styles/styles.scss';
 import 'bulma/css/bulma.css';
 
 export class RegForm extends Component {
-
   onSubmit = () => {
     const inputList = document.querySelectorAll('.input')
     const values = {};
@@ -14,6 +13,11 @@ export class RegForm extends Component {
     this.props.regAction(values);
   }
 
+  showError = () => {
+    const mailWarningParagraph = document.querySelector('#email-warning');
+    this.state.regSuccess ? mailWarningParagraph.classList.remove('hide') : mailWarningParagraph.classList.add('hide');
+  }
+  
   render() {
     return (
       <div id="reg-form">
@@ -30,7 +34,10 @@ export class RegForm extends Component {
           <label className="label">E-mail</label>
           <p className="control">
             <input className="input" type="email" placeholder="Elektronikus levélcímed" />
-          </p>
+            </p>
+          <p id="email-warning" className="help is-danger hide">
+            Ez az e-mail cím már létezik, válassz másikat!
+            </p>
           <p className="help">Ígérem, nincs spam. Még nem tudom hogyan kell.</p>
         </div>
 
@@ -39,7 +46,7 @@ export class RegForm extends Component {
           <p className="control">
             <input className="input" type="password" placeholder="Jelszó" />
           </p>
-            <p className="help">Tudod, a szokásos. Legyen nehezen feltörhető, de könnyen eszedbe jutható jelszavad. Felőlem mondjuk a kutyád neve is jó lesz.</p>
+          <p className="help">Tudod, a szokásos. Legyen nehezen feltörhető, de könnyen eszedbe jutható jelszavad. Felőlem mondjuk a kutyád neve is jó lesz.</p>
         </div>
 
         <div className="field">

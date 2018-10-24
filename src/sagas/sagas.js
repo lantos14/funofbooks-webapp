@@ -19,13 +19,22 @@ function* getBookList() {
 function* sendRegData(action) {
   try {
     yield delay(100);
-    yield call(API.postData, `${process.env.FOB_SERVER}/users`, action.payload);
-    yield put({
-      type: 'REG_SUCCEEDED',
-      payload: action.payload,
-    });
+    const response = yield call(API.postData, `${process.env.FOB_SERVER}/users`, action.payload);
+    
+    if (response.status >= 200 && response.status < 300) {
+      yield put({
+        type: 'REG_SUCCEEDED',
+        payload: action.payload,
+      }) 
+
+    } else {
+      throw response;
+    }
   } catch (error) {
-    console.log(error); //eslint-disable-line
+    yield put({
+      type: 'REG_FAILED',
+      payload: error,
+    })
   }
 }
 
