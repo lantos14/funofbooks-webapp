@@ -21,4 +21,11 @@ export function updateReviewedBook(bookId) {
     type: 'REVIEWED_BOOK_UPDATED',
     payload: bookId,
   };
+}
+
+export function registration(values) {
+  return {
+    type: 'REG_REQUESTED',
+    payload: values,
+  };
 } 

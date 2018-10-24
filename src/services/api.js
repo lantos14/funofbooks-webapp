@@ -11,3 +11,19 @@ export function getData(url) {
       throw error;
     });
 }
+
+export function postData(url, data) {
+  console.log('data: ', data);
+  return fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": process.env.FOB_SERVER_TOKEN,
+    },
+    body: JSON.stringify(data),
+  })
+    .then(response => response.json())
+    .catch((error) => {
+      throw error;
+    });
+}

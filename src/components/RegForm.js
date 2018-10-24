@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/styles.scss';
 import 'bulma/css/bulma.css';
 
@@ -10,7 +11,7 @@ export class RegForm extends Component {
     for (let input of inputList) {
       values[input.type] = input.value;
     }
-    // values can be forwarded now to action
+    this.props.regAction(values);
   }
 
   render() {
@@ -52,3 +53,7 @@ export class RegForm extends Component {
     );
   }
 }
+
+RegForm.propTypes = {
+  regAction: PropTypes.func.isRequired,
+};
