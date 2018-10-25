@@ -1,3 +1,5 @@
+You can visit this website at http://s3.funofbooks.hu
+
 # FunOfBooks web application
 
 Check out the application's [funofbooks-server](https://github.com/lantos14/funofbooks-server) of the project as well.
