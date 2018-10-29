@@ -31,7 +31,7 @@ function* login(action) {
 function* getBookList() {
   try {
     yield delay(100);
-    const data = yield call(API.getData, `${process.env.FOB_SERVER}/nospoiler`);
+    const data = yield call(API.getData, `${process.env.FOB_LOCAL_SERVER}/nospoiler`);
     yield put({
       type: 'BOOKLIST_SUCCEEDED',
       payload: data,
