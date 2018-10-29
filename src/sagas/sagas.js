@@ -1,14 +1,15 @@
 import "regenerator-runtime/runtime";
 import { delay } from 'redux-saga';
 import { takeEvery, put, call } from 'redux-saga/effects';
+import { history } from '../store/configureStore';
 import * as API from '../services/api';
 
 function* login(action) {
   try {
     const token = yield call(
       API.login,
-      action.payload.email,
-      action.payload.pwd
+      action.email,
+      action.pwd
     );
     localStorage.setItem('token', token.accessToken);
     yield put({
