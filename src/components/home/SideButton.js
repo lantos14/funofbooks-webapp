@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export class SideButton extends Component {
 
   handleOnClick = () => {
-    history.push('/');
+    history.push(this.props.link);
   }
 
   render() {
@@ -32,4 +32,5 @@ export class SideButton extends Component {
 SideButton.propTypes = {
   icon: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };

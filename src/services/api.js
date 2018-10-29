@@ -7,7 +7,6 @@ export function login(email, password) {
       email,
       password,
     }, (error, data) => {
-      console.log('data: ', data);
       if (error) {
         reject(error);
       }

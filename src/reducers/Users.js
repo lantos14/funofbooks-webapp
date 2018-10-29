@@ -1,5 +1,5 @@
 export default function Users(state = {
-  email: [],
+  email: '',
   isAuthenticated: false,
   isAuthenticating: false,
   loginFailed: null,

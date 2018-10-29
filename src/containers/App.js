@@ -7,11 +7,11 @@ import PropTypes from "prop-types";
 import React from "react";
 import { hot } from "react-hot-loader";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBook, faQuestionCircle, faLock } from '@fortawesome/free-solid-svg-icons'
+import { faBook, faQuestionCircle, faLock, faUserPlus, faUser } from '@fortawesome/free-solid-svg-icons'
 import RegistrationPage from "./RegistrationPage";
 import LoginPage from "./LoginPage";
 
-library.add(faBook, faQuestionCircle, faLock)
+library.add(faBook, faQuestionCircle, faLock, faUserPlus, faUser)
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
