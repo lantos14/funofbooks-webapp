@@ -9,6 +9,7 @@ import { hot } from "react-hot-loader";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBook, faQuestionCircle, faLock } from '@fortawesome/free-solid-svg-icons'
 import RegistrationPage from "./RegistrationPage";
+import LoginPage from "./LoginPage";
 
 library.add(faBook, faQuestionCircle, faLock)
 
@@ -24,6 +25,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/review" component={ReviewPage} />
           <Route exact path="/registration" component={RegistrationPage} />
+          <Route exact path="/login" component={LoginPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
