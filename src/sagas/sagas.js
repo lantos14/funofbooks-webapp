@@ -3,6 +3,30 @@ import { delay } from 'redux-saga';
 import { takeEvery, put, call } from 'redux-saga/effects';
 import * as API from '../services/api';
 
+function* login(action) {
+  try {
+    const token = yield call(
+      API.login,
+      action.payload.email,
+      action.payload.pwd
+    );
+    localStorage.setItem('token', token.accessToken);
+    yield put({
+      type: 'LOGIN_SUCCEEDED',
+      token: token.accessToken,
+    });
+    yield put({
+      type: 'RESTORE_USER_BY_TOKEN_REQUESTED',
+    });
+    history.push('/');
+  } catch (error) {
+    yield put({
+      type: 'LOGIN_FAILED',
+    });
+    console.log(error); // eslint-disable-line
+  }
+}
+
 function* getBookList() {
   try {
     yield delay(100);
@@ -41,4 +65,5 @@ function* sendRegData(action) {
 export default function* rootSaga() {
   yield takeEvery('BOOKLIST_REQUESTED', getBookList);
   yield takeEvery('REG_REQUESTED', sendRegData);
+  yield takeEvery('LOGIN_REQUESTED', login);
 }

@@ -1,3 +1,24 @@
+import { socket } from '../store/store.js';
+
+export function login(email, password) {
+  return new Promise((resolve, reject) => {
+    socket.emit('authenticate', {
+      strategy: 'local',
+      email,
+      password,
+    }, (error, data) => {
+      if (error) {
+        reject(error);
+      }
+      socket.emit('authenticate', {
+        token: data.accessToken,
+      }, (mesSock, dataSock) => {
+        resolve(dataSock);
+      });
+    });
+  });
+}
+
 export function getData(url) {
   return fetch(url, {
     headers: {

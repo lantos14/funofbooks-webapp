@@ -31,9 +31,9 @@ export function registration(values) {
 } 
 
 export function login(values) {
-  console.log('values: ', values);
   return {
     type: 'LOGIN_REQUESTED',
-    payload: values,
+    email: values.email,
+    pwd: values.password,
   };
 } 
