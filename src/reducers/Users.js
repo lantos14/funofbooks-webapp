@@ -45,6 +45,7 @@ export default function Users(state = {
         ...state,
         isAuthenticating: false,
         isAuthenticated: true,
+        email: action.email,
       };
     }
 

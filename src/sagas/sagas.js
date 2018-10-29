@@ -15,6 +15,7 @@ function* login(action) {
     yield put({
       type: 'LOGIN_SUCCEEDED',
       token: token.accessToken,
+      email: action.email,
     });
     yield put({
       type: 'RESTORE_USER_BY_TOKEN_REQUESTED',
