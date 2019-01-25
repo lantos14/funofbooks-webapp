@@ -2,7 +2,7 @@ You can visit this website at http://s3.funofbooks.hu
 
 # FunOfBooks web application
 
-Check out the application's [funofbooks-server](https://github.com/lantos14/funofbooks-server) of the project as well.
+Check out the application's [backend](https://github.com/lantos14/funofbooks-server) as well.
 
 ## Introduction
 
