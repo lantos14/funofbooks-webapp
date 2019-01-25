@@ -6,7 +6,8 @@ import * as API from '../services/api';
 function* getBookList() {
   try {
     yield delay(100);
-    const data = yield call(API.getData, `${process.env.FOB_SERVER}/nospoiler`);
+    const url = `${process.env.FOB_SERVER}/nospoiler`
+    const data = yield call(API.getData, url);
     yield put({
       type: 'BOOKLIST_SUCCEEDED',
       payload: data,
