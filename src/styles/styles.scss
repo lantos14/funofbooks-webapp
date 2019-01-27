@@ -79,9 +79,18 @@ body {
       margin: 2% 10%;
       #main {
         background-image: $secondary-color;
+        position: relative;
         border-radius: 10px;
         display: flex;
         justify-content: space-around;
+
+        .loading-text {
+          position: absolute;
+          text-align: center;
+          font-size: 32px;
+          margin: 100px 100px 0 100px;
+        }
+
         .card {
           animation: 1s ease-out 0s 1 slideInFromLeft;
           min-width: 300px;

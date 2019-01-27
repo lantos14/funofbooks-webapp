@@ -7,12 +7,12 @@ import { SideBar } from './SideBar';
 
 export class Content extends Component {
   render() {
-    const { bookList, updateReviewedBook } = this.props;
+    const { bookList, updateReviewedBook, loading } = this.props;
     return (
       <div id='main-content'>
         <div className='home-content'>
           <SideBar></SideBar>
-          <Shelf bookList={bookList} updateReviewedBook={updateReviewedBook}></Shelf>
+          <Shelf bookList={bookList} updateReviewedBook={updateReviewedBook} loading={loading}></Shelf>
         </div>
       </div>
     );
@@ -21,5 +21,6 @@ export class Content extends Component {
 
 Content.propTypes = {
   updateReviewedBook: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
   bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

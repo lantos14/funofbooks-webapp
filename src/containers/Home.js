@@ -22,7 +22,7 @@ export class Home extends Component {
       <div id='home'>
         <div className="background"></div>
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
-        <Content bookList={bookList} updateReviewedBook={this.props.updateReviewedBook}></Content>
+        <Content bookList={bookList} updateReviewedBook={this.props.updateReviewedBook} loading={this.props.loading}></Content>
         <Footer></Footer>
       </div>
     )
@@ -31,12 +31,14 @@ export class Home extends Component {
 
 Home.propTypes = {
   getBooks: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
   updateReviewedBook: PropTypes.func.isRequired,
   bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = store => ({
   bookList: store.BookList.Books,
+  loading: store.BookList.loading,
 })
 
 const mapDispatchToProps = {
