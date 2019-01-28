@@ -8,7 +8,7 @@ export class Header extends Component {
       <header className="App-header">
         <section className='hero is-small'>
           <div className='hero-body'>
-            <div className='container'>
+            <div className='title'>
               <h1>FunOfBooks</h1>
               <h2>Mert egy jó könyv mindenkinek jár</h2>
             </div>

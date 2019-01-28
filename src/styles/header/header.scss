@@ -5,7 +5,7 @@ header {
   flex-direction: column;
   justify-content: center;
   h1 {
-    font-size: 30px;
+    font-size: 40px;
     font-family: $title-font;
     
     @include media-breakpoint-up(md) {
@@ -16,25 +16,37 @@ header {
     font-size: 20px;
     @include media-breakpoint-up(md) {
       font-size: 24px;
-          }
+    }
   }
-
+  
   .hero {
     background-image: linear-gradient(to right, #d9cfac, #d6ccad, #d2c9ae, #cfc6af, #cbc3b0);
     .hero-body {
       margin: 0 10%;
       display: flex;
-      justify-content: space-between;
       height: 300px;
       @include media-breakpoint-up(md) {
-        font-size: 30px;
+        font-size: 30px;        
+      }
+
+      .title {
+        margin: 0 0 5% 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
       }
       
       .img-container {
+        position: absolute;
+        opacity: .2;
+        right: 10%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 200px;
+        height: 200px;
       }
     }
   }
