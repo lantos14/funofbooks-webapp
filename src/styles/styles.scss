@@ -44,6 +44,7 @@ body {
         }
 
         .card {
+          position: relative;
           animation: 1s ease-out 0s 1 slideInFromLeft;
           min-width: 240px;
           cursor: pointer;
@@ -70,6 +71,12 @@ body {
           }
           p {
             text-align: justify;
+          }
+
+          .card-date {
+            font-size: 14px;
+            position: absolute;
+            bottom: 10px; left: 10px;
           }
         }
       }

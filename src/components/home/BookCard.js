@@ -3,16 +3,19 @@ import 'bulma/css/bulma.css';
 import PropTypes from 'prop-types';
 import '../../styles/styles.scss';
 import { history } from '../../store/configureStore';
+import scrollToTop from '../../utils/scrollToTop';
 
 export class BookCard extends Component {
 
   handleOnClick = (e) => {
     this.props.updateReviewedBook(e.currentTarget.id);
     history.push('/review');
+
+    scrollToTop(600);
   }
 
   render() {
-    const { bookIndex, imgSrc, title, content } = this.props;
+    const { bookIndex, imgSrc, title, content, createdAt } = this.props;
     return (
       <div id={bookIndex} className="column is-one-third card" onClick={this.handleOnClick}>
         <div className="card-image">
@@ -29,6 +32,9 @@ export class BookCard extends Component {
           <div className="content">
             <p>{content}</p>
           </div>
+          <div className='card-date'>
+            <p><em>Uploaded at: {createdAt}</em></p>
+          </div>
         </div>
       </div>
     );
@@ -41,4 +47,5 @@ BookCard.propTypes = {
   imgSrc: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
 };

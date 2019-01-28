@@ -18,7 +18,7 @@ export class Shelf extends Component {
             </ div> 
             :
             bookList.map((book, i) =>
-              <BookCard key={i} updateReviewedBook={updateReviewedBook} bookIndex={i} imgSrc={book.imgSrc} title={book.title} content={book.description}></BookCard>
+              <BookCard key={i} updateReviewedBook={updateReviewedBook} bookIndex={i} imgSrc={book.imgSrc} title={book.title} content={book.description} createdAt={book.createdAt}></BookCard>
             )
         }
       </div>
