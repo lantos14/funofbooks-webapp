@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import '../../styles/styles.scss';
 import 'bulma/css/bulma.css';
 import { Shelf } from './Shelf';
-import { SideBar } from './SideBar';
 
 export class Content extends Component {
   render() {
@@ -11,7 +10,6 @@ export class Content extends Component {
     return (
       <div id='main-content'>
         <div className='home-content'>
-          <SideBar></SideBar>
           <Shelf bookList={bookList} updateReviewedBook={updateReviewedBook} loading={loading}></Shelf>
         </div>
       </div>

@@ -1,0 +1,32 @@
+#side {
+  position: absolute;
+  bottom: -25px; left: 9%;
+  display: flex;
+  .box {
+    cursor: pointer;
+    max-height: 70px;
+    margin-right: 20px;
+    &:hover {
+      filter: brightness(90%);
+    }
+    &:active {
+      filter: brightness(110%);
+    }
+    .media {
+      .media-left {
+        font-size: 24px;
+      }
+      .media-content {
+        font-size: 24px;
+      }
+    }
+  }
+  .link-button {
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+    background-image: url("../images/github-mark.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
