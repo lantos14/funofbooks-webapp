@@ -9,7 +9,7 @@ export class Shelf extends Component {
   render() {
     const { bookList, updateReviewedBook, loading } = this.props;
     return (
-      <div id='main' className='columns is-multiline main'>
+      <div id='main' className={`columns is-multiline main ${loading && 'loading-content'}`}>
         {
           loading ?
             <div>

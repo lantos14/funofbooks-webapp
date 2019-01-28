@@ -5,7 +5,7 @@ header {
   flex-direction: column;
   justify-content: center;
   h1 {
-    font-size: 40px;
+    font-size: 36px;
     font-family: $title-font;
     
     @include media-breakpoint-up(md) {
