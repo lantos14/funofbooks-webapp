@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { history } from '../../store/configureStore';
 import '../../styles/styles.scss';
 import 'bulma/css/bulma.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export class SideButton extends Component {
 
@@ -16,7 +16,7 @@ export class SideButton extends Component {
       <div className="box" onClick={this.handleOnClick}>
         <article className="media">
           <div className="media-left">
-            <FontAwesomeIcon className="is-medium" icon={this.props.icon} />
+          <i className={`fas fa-${this.props.icon}`}></i>
           </div>
           <div className="media-content">
             <div className="content">

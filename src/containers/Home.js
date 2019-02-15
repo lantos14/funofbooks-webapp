@@ -21,9 +21,9 @@ export class Home extends Component {
     return (
       <div id='home'>
         <div className="background"></div>
-        <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
+        <Header />
         <Content bookList={bookList} updateReviewedBook={this.props.updateReviewedBook} loading={this.props.loading}></Content>
-        <Footer></Footer>
+        <Footer />
       </div>
     )
   }
