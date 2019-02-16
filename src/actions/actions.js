@@ -14,7 +14,14 @@ export function getBooks() {
   return {
     type: 'BOOKLIST_REQUESTED',
   };
-} 
+}
+
+export function loginRequested(creds) {
+  return {
+    type: 'LOGIN_REQUESTED',
+    payload: creds,
+  };
+}
 
 export function updateReviewedBook(bookId) {
   return {

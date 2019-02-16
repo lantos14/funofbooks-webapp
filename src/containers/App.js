@@ -2,14 +2,14 @@
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import ReviewPage from "./ReviewPage";
+import RegistrationPage from "./RegistrationPage";
+import LoginPage from "./LoginPage";
 import NotFoundPage from "./NotFoundPage";
 import PropTypes from "prop-types";
 import React from "react";
 import { hot } from "react-hot-loader";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBook, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
-import { RegistrationPage } from "./RegistrationPage";
-import { LoginPage } from "./LoginPage";
 
 library.add(faBook, faQuestionCircle)
 

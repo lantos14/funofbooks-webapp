@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class RegistrationSheet extends Component {
 
@@ -29,7 +30,7 @@ export default class RegistrationSheet extends Component {
 
         <div className="field">
           <p className="control">
-            <button className="button is-success">
+            <button className="button is-success" onClick={this.props.onLogin}>
               Regisztrálok
             </button>
           </p>
@@ -39,3 +40,7 @@ export default class RegistrationSheet extends Component {
     );
   }
 }
+
+RegistrationSheet.propTypes = {
+  onLogin: PropTypes.func.isRequired,
+};
