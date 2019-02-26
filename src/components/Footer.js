@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles/styles.scss';
 import 'bulma/css/bulma.css';
 
-export class Footer extends Component {
-  render() {
+const  Footer = () => {
     return (
       <footer className="footer">
         <div className="content has-text-centered">
@@ -11,5 +10,6 @@ export class Footer extends Component {
         </div>
       </footer>
     );
-  }
 }
+
+export default Footer;

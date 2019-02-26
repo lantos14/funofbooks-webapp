@@ -13,8 +13,6 @@ export function getData(url) {
 }
 
 export function sendReg(url, data) {
-  console.log('sendReg data: ', data);
-
   return fetch(url, {
     method: 'POST',
     headers: {

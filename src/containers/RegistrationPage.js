@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { connect } from 'react-redux';
 import { loginRequested } from '../actions/actions'
 import RegistrationSheet from '../components/registration/RegistrationSheet';

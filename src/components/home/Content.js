@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/styles.scss';
 import 'bulma/css/bulma.css';
 import { Shelf } from './Shelf';
 
-export class Content extends Component {
-  render() {
-    const { bookList, updateReviewedBook, loading } = this.props;
-    return (
-      <div id='main-content'>
-        <div className='home-content'>
-          <Shelf bookList={bookList} updateReviewedBook={updateReviewedBook} loading={loading}></Shelf>
-        </div>
+export const Content = (props) => {
+  const { bookList, updateReviewedBook, loading } = props;
+  return (
+    <div id='main-content'>
+      <div className='home-content'>
+        <Shelf bookList={bookList} updateReviewedBook={updateReviewedBook} loading={loading}></Shelf>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 Content.propTypes = {

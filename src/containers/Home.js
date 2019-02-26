@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Header } from '../components/Header';
+import Header from '../components/Header';
 import { Content } from '../components/home/Content';
-import { Footer } from '../components/Footer';
+import Footer from '../components/Footer';
 import { getBooks, updateReviewedBook } from '../actions/actions'
 import { connect } from 'react-redux';
 import '../styles/styles.scss';

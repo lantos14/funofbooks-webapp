@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'bulma/css/bulma.css';
 import bookIcon from '../images/mage-icon.png';
-import { SideBar } from './home/SideBar';
-export class Header extends Component {
-  render() {
+import SideBar from './home/SideBar';
+
+const Header = () => {
     return (
       <header className="App-header">
         <section className='hero is-small'>
@@ -20,5 +20,6 @@ export class Header extends Component {
         <SideBar />
       </header>
     );
-  }
 }
+
+export default Header;
