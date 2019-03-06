@@ -20,7 +20,7 @@ library.add(faBook, faQuestionCircle)
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div id="switch">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/review" component={ReviewPage} />

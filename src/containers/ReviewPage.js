@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/Header';
-import { Footer } from '../components/Footer';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer';
 import { ReviewContent } from '../components/reviewPage/ReviewContent';
 import { getBooks } from '../actions/actions'
 import { connect } from 'react-redux';

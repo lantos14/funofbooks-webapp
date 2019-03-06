@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 import { Content } from '../components/home/Content';
 import Footer from '../components/Footer';
 import { getBooks, updateReviewedBook } from '../actions/actions'
@@ -20,7 +20,6 @@ export class Home extends Component {
     const { bookList } = this.props;
     return (
       <div id='home'>
-        <div className="background"></div>
         <Header />
         <Content bookList={bookList} updateReviewedBook={this.props.updateReviewedBook} loading={this.props.loading}></Content>
         <Footer />
