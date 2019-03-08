@@ -62,7 +62,10 @@ body {
   .review.content {
     display: flex;
     flex-direction: column;
-    margin: 2% 10%;
+    @include media-breakpoint-up(md) {
+      margin: 2% 10%;
+    }
+    margin-top: 30px;
     .review {
       padding: 0px;
       .card {
