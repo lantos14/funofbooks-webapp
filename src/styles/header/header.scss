@@ -4,10 +4,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    width: 100%;
     @include media-breakpoint-up(md) {
       min-height: 800px;
     }
-    min-height: 300px;
+    min-height: 500px;
   }
   .hero {
     .hero-body {
@@ -24,7 +25,8 @@
         border-top: 1px solid black;
         border-bottom: 1px solid black;
         h1 {
-          font-size: 32px;
+          font-size: 40px;
+          text-align: center;
           font-family: $title-font;
 
           @include media-breakpoint-up(md) {
@@ -33,9 +35,10 @@
           }
         }
         h2 {
-          font-size: 16px;
+          font-size: 24px;
+          text-align: center;
           @include media-breakpoint-up(md) {
-            font-size: 60px;
+            font-size: 80px;
           }
         }
       }
