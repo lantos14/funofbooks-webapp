@@ -1,0 +1,30 @@
+#main-content {
+  .home-content {
+    margin-top: 50px;
+    #main {
+      margin: 0;
+      background-image: $secondary-color;
+      position: relative;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-around;
+
+      .loading-text {
+        position: absolute;
+        text-align: center;
+        font-size: 32px;
+        margin: 100px 100px 0 100px;
+        @include media-breakpoint-down(md) {
+          font-size: 20px;
+          margin: 0;
+        }
+      }
+      @import './card.scss';
+    }
+
+    .loading-content {
+      width: 100vw;
+      height: 70vh;
+    }
+  }
+}

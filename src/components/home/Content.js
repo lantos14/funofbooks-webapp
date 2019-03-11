@@ -8,7 +8,7 @@ export const Content = (props) => {
   const { bookList, updateReviewedBook, loading } = props;
   return (
     <div id='main-content'>
-      <div className='home-content'>
+      <div className='home-content flex-center'>
         <Shelf bookList={bookList} updateReviewedBook={updateReviewedBook} loading={loading}></Shelf>
       </div>
     </div>

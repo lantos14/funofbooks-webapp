@@ -1,0 +1,31 @@
+.review.content {
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-up(md) {
+    margin: 2% 10%;
+  }
+  margin-top: 30px;
+  .review {
+    padding: 0px;
+    .card {
+      border-radius: 10px;
+    }
+    .review-text {
+      padding: 18px 24px;
+      text-align: justify;
+      @include media-breakpoint-up(md) {
+        h1 {
+          font-size: 80px;
+        }
+        p {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  .tabs {
+    ul {
+      margin: 0;
+    }
+  }
+}

@@ -9,7 +9,7 @@ const Header = () => {
 
       <section className='hero is-small'>
           <div className='hero-body'>
-            <div className='title'>
+            <div className='title flex-center'>
               <h1>FunOfBooks</h1>
               <h2>Egy jó könyv mindenkinek jár</h2>
             </div>

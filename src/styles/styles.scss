@@ -9,12 +9,10 @@ body {
   font-family: $p-font;
   position: absolute;
 
-  @import "./header/header.scss";
-
   #app {
     width: 100%;
     background-image: linear-gradient(to right bottom, #a9b9cf, #afbed3, #b5c3d7, #bbc8dc, #c1cde0);
-
+    
     #switch {
       border-radius: 30px;
       background-color: white;
@@ -24,72 +22,11 @@ body {
       margin: 0;
     }
   }
-  #main-content {
-    .home-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 50px;
-      #main {
-        margin: 0;
-        background-image: $secondary-color;
-        position: relative;
-        border-radius: 10px;
-        display: flex;
-        justify-content: space-around;
 
-        .loading-text {
-          position: absolute;
-          text-align: center;
-          font-size: 32px;
-          margin: 100px 100px 0 100px;
-          @include media-breakpoint-down(md) {
-            font-size: 20px;
-            margin: 0;
-          }
-        }
-        @import './card.scss';
-      }
-
-      .loading-content {
-        width: 100vw;
-        height: 70vh;
-      }
-    }
-  }
-
-  .review.content {
-    display: flex;
-    flex-direction: column;
-    @include media-breakpoint-up(md) {
-      margin: 2% 10%;
-    }
-    margin-top: 30px;
-    .review {
-      padding: 0px;
-      .card {
-        border-radius: 10px;
-      }
-      .review-text {
-        padding: 18px 24px;
-        text-align: justify;
-        @include media-breakpoint-up(md) {
-          h1 {
-            font-size: 80px;
-          }
-          p {
-            font-size: 30px;
-          }
-        }
-      }
-    }
-    .tabs {
-      ul {
-        margin: 0;
-      }
-    }
-  }
+  @import './header/header.scss';
+  @import './home/home-page.scss';
+  @import './review/review-page.scss';
+  @import './registration/registration-page.scss';
 
   .footer {
     position: relative;
@@ -103,26 +40,6 @@ body {
     }
   }
 
-  #registration-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    #registration-sheet {
-      background-color: white;
-      min-height: 250px;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      padding: 5%;
-
-      @include media-breakpoint-up(md) {
-        margin: 10%;
-        border-radius: 20px;
-      }
-
-      input {
-        width: 350px;
-      }
-    }
-  }
 }
+
+@import './common.scss';
