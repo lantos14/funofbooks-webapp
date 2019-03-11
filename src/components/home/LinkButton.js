@@ -6,7 +6,7 @@ import 'bulma/css/bulma.css';
 const LinkButton = (props) => {
   return (
     <a target="_blank" rel="noopener noreferrer" href={props.link}>
-      <div className="box link-button"></div>
+      <div className="box link-button" />
     </a>
   );
 }

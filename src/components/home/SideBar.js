@@ -5,12 +5,16 @@ import '../../styles/styles.scss';
 import 'bulma/css/bulma.css';
 
 const SideBar = () => {
-    return (
-      <div className='side' id='side'>
-      <SideButton icon="book" text="Könyvek" ></SideButton>
-      <LinkButton link="https://bit.ly/2CeFxSI"/>
+  return (
+    <div className='side' id='side'>
+      <div className='left-panel'>
+        <SideButton icon="book" text="Könyvek" />
+      </div>
+      <div className='right-panel'>
+        <LinkButton link="https://bit.ly/2CeFxSI" />
+      </div>
     </div>
-    );
+  );
 }
 
 export default SideBar;

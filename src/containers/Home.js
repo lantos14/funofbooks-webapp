@@ -21,7 +21,11 @@ export class Home extends Component {
     return (
       <div id='home'>
         <Header />
-        <Content bookList={bookList} updateReviewedBook={this.props.updateReviewedBook} loading={this.props.loading}></Content>
+        <Content
+          bookList={bookList}
+          updateReviewedBook={this.props.updateReviewedBook}
+          loading={this.props.loading}
+        />
         <Footer />
       </div>
     )
