@@ -1,4 +1,5 @@
 .header-wrapper {
+  position: relative;
   header {
     background: url("../images/treebook-cropped.jpg");
     background-size: cover;
@@ -8,9 +9,12 @@
     @include media-breakpoint-up(md) {
       min-height: 800px;
     }
-    min-height: 500px;
+    min-height: 300px;
   }
   .hero {
+    position: absolute;
+    top:0;left:0;right:0;
+    background-color: rgba(0, 0, 0, 0.5);
     .hero-body {
       display: flex;
       flex-direction: column;
@@ -18,23 +22,25 @@
       align-items: center;
 
       .title {
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
         h1 {
           font-size: 40px;
           text-align: center;
           font-family: $title-font;
+          color: white;
 
           @include media-breakpoint-up(md) {
-            font-size: 120px;
+            font-size: 100px;
             font-weight: 500;
           }
         }
         h2 {
           font-size: 24px;
           text-align: center;
+          color: white;
           @include media-breakpoint-up(md) {
-            font-size: 80px;
+            font-size: 40px;
           }
         }
       }
