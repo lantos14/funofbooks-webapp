@@ -3,15 +3,12 @@ import 'bulma/css/bulma.css';
 import PropTypes from 'prop-types';
 import '../../styles/styles.scss';
 import { history } from '../../store/configureStore';
-import scrollToTop from '../../utils/scrollToTop';
 
 export class BookCard extends Component {
 
   handleOnClick = (e) => {
     this.props.updateReviewedBook(e.currentTarget.id);
     history.push('/review');
-
-    scrollToTop(100);
   }
 
   render() {
