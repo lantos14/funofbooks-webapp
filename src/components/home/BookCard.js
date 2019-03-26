@@ -9,6 +9,8 @@ export class BookCard extends Component {
   handleOnClick = (e) => {
     this.props.updateReviewedBook(e.currentTarget.id);
     history.push('/review');
+
+    document.querySelector('.side').scrollIntoView();
   }
 
   render() {

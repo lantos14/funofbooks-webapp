@@ -5,6 +5,7 @@ import '../../styles/styles.scss';
 import { ReviewText } from './ReviewText';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { history } from '../../store/configureStore';
 
 export class ReviewContent extends Component {
   state = {
@@ -17,6 +18,11 @@ export class ReviewContent extends Component {
     event.currentTarget.classList.add('is-active');
   }
 
+  backToHome = () => {
+    history.push('/');
+    document.querySelector('.side').scrollIntoView();
+  }
+
   render() {
     const { article } = this.props;
     return (
@@ -25,6 +31,7 @@ export class ReviewContent extends Component {
           <div className="column review">
             <div className="card">
               <ReviewText article={article}></ReviewText>
+              <button className='back-to-home-btn' onClick={this.backToHome}>Vissza a főoldalra</button>
             </div>
           </div>
         </div>
