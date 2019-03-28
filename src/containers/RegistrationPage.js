@@ -3,23 +3,42 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer';
 import { connect } from 'react-redux';
-import { loginRequested } from '../actions/actions'
+import { history } from '../store/configureStore';
+import { regRequested } from '../actions/actions'
 import RegistrationSheet from '../components/registration/RegistrationSheet';
+import '../styles/styles.scss';
 
 export class RegistrationPage extends Component {
 
-  login = () => {
+
+  register = () => {
+    const name = document.querySelector("input[type='text']").value;
     const email = document.querySelector("input[type='email']").value;
-    const pwd = document.querySelector("input[type='password']").value;
-    this.props.loginRequested({ email, pwd })
+    const password = document.querySelector("input[type='password']").value;
+    this.props.regRequested({ email, password, name })
+  }
+
+  clearInputs = () => {
+    document.querySelectorAll('input').forEach(input => input.value = '');
   }
 
   render() {
+    const { regSuccess } = this.props;
+    if (regSuccess) {
+      this.clearInputs();
+      window.alert('regisztráció sikeres');
+      history.push('/');
+    }
+
     return (
       <div id="registration-page">
         <div className="background"></div>
         <Header />
-        <RegistrationSheet onLogin={this.login}/>
+        <h1 className='title registration-title'>Regisztráció</h1>
+        <RegistrationSheet
+          onReg={this.register}
+          regSuccess={regSuccess}
+        />
         <Footer />
       </div>
     );
@@ -27,14 +46,17 @@ export class RegistrationPage extends Component {
 }
 
 RegistrationPage.propTypes = {
-  loginRequested: PropTypes.func.isRequired,
+  regRequested: PropTypes.func.isRequired,
+  regSuccess: PropTypes.bool
 };
 
-const mapStateToProps = () => ({
+const mapStateToProps = (store) => ({
+  regSuccess: store.User.regSuccess,
+  regInProgress: store.User.regInProgress,
 })
 
 const mapDispatchToProps = {
-  loginRequested,
+  regRequested,
 };
 
 export default connect(

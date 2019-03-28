@@ -9,19 +9,40 @@ export default class RegistrationSheet extends Component {
 
         <div className="field">
           <p className="control has-icons-left has-icons-right">
-            <input className="input" type="email" placeholder="E-mail" />
+            <input
+              className="input"
+              type="text"
+              placeholder="Név" />
+            <span className="icon is-small is-left">
+              <i className="fas fa-user"></i>
+            </span>
+            {/* <span className="icon is-small is-right">
+              <i className="fas fa-check"></i>
+            </span> */}
+          </p>
+        </div>
+
+        <div className="field">
+          <p className="control has-icons-left has-icons-right">
+            <input
+              className="input"
+              type="email"
+              placeholder="E-mail" />
             <span className="icon is-small is-left">
               <i className="fas fa-envelope"></i>
             </span>
-            <span className="icon is-small is-right">
+            {/* <span className="icon is-small is-right">
               <i className="fas fa-check"></i>
-            </span>
+            </span> */}
           </p>
         </div>
 
         <div className="field">
           <p className="control has-icons-left">
-            <input className="input" type="password" placeholder="Jelszó" />
+            <input
+              className="input"
+              type="password"
+              placeholder="Jelszó" />
             <span className="icon is-small is-left">
               <i className="fas fa-lock"></i>
             </span>
@@ -30,7 +51,7 @@ export default class RegistrationSheet extends Component {
 
         <div className="field">
           <p className="control">
-            <button className="button is-success" onClick={this.props.onLogin}>
+            <button className="button is-success" onClick={this.props.onReg}>
               Regisztrálok
             </button>
           </p>
@@ -42,5 +63,6 @@ export default class RegistrationSheet extends Component {
 }
 
 RegistrationSheet.propTypes = {
-  onLogin: PropTypes.func.isRequired,
+  onReg: PropTypes.func.isRequired,
+  regSuccess: PropTypes.bool,
 };

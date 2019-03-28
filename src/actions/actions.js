@@ -23,6 +23,19 @@ export function loginRequested(creds) {
   };
 }
 
+export function regRequested(creds) {
+  return {
+    type: 'REG_REQUESTED',
+    payload: creds,
+  };
+}
+
+export function regClear() {
+  return {
+    type: 'REG_CLEAR_REQUESTED'
+  };
+}
+
 export function updateReviewedBook(bookId) {
   return {
     type: 'REVIEWED_BOOK_UPDATED',

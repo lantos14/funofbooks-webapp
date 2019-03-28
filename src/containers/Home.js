@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
 import { Content } from '../components/home/Content';
 import Footer from '../components/Footer';
-import { getBooks, updateReviewedBook } from '../actions/actions'
+import { getBooks, updateReviewedBook, regClear } from '../actions/actions'
 import { connect } from 'react-redux';
 import '../styles/styles.scss';
 
@@ -14,6 +14,7 @@ export class Home extends Component {
 
   componentDidMount() {
     this.props.getBooks();
+    this.props.regClear();
   }
 
   render() {
@@ -34,6 +35,7 @@ export class Home extends Component {
 
 Home.propTypes = {
   getBooks: PropTypes.func.isRequired,
+  regClear: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   updateReviewedBook: PropTypes.func.isRequired,
   bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -47,6 +49,7 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = {
   getBooks,
   updateReviewedBook,
+  regClear,
 };
 
 export default connect(
