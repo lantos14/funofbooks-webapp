@@ -11,6 +11,10 @@ const store = configureStore();
 // eslint-disable-next-line
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"></link>
 
+store.subscribe(() => {
+  localStorage.setItem('TOKEN', store.getState().User.token);
+});
+
 render(
   <AppContainer>
     <Root store={store} history={history} />

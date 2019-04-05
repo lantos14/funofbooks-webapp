@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import { connect } from 'react-redux';
 import { loginRequested } from '../actions/actions'
 import LoginSheet from '../components/Login/LoginSheet';
+import UserBar from '../components/UserBar/UserBar';
 
 export class LoginPage extends Component {
 
@@ -22,8 +23,9 @@ export class LoginPage extends Component {
     return (
       <div id="registration-page">
         <div className="background"></div>
+        <UserBar email={this.props.email}/>
         <Header />
-        <LoginSheet 
+        <LoginSheet
           onLogin={this.login}
         />
         <Footer />
@@ -34,9 +36,11 @@ export class LoginPage extends Component {
 
 LoginPage.propTypes = {
   loginRequested: PropTypes.func.isRequired,
+  email: PropTypes.string,
 };
 
-const mapStateToProps = () => ({
+const mapStateToProps = (store) => ({
+  email: store.User.email,
 })
 
 const mapDispatchToProps = {

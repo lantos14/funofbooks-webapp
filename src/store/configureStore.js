@@ -33,6 +33,10 @@ function configureStoreProd(initialState) {
 }
 
 function configureStoreDev(initialState) {
+  const startState = {
+    ...initialState,
+    token: localStorage.getItem('TOKEN'),
+  };
   const reactRouterMiddleware = routerMiddleware(history);
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [
@@ -45,7 +49,7 @@ function configureStoreDev(initialState) {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // add support for Redux dev tools
   const store = createStore(
     connectRouterHistory(rootReducer),
-    initialState,
+    startState,
     composeEnhancers(applyMiddleware(...middlewares))
   );
 

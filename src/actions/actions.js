@@ -23,6 +23,11 @@ export function loginRequested(creds) {
   };
 }
 
+export function logout() {
+  return {
+    type: 'LOGOUT_REQUESTED',
+  };
+}
 export function regRequested(creds) {
   return {
     type: 'REG_REQUESTED',

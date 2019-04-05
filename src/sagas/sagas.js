@@ -23,6 +23,7 @@ function* getBookList() {
 function* sendLoginCreds(action) {
   try {
     yield delay(100);
+    const { email } = action.payload;
     const url = `${process.env.FOB_SERVER}/authentication`;
     const data = yield call(API.sendLogin, url, action.payload);
     console.log('sendLoginCreds: ', data); //eslint-disable-line
@@ -30,9 +31,10 @@ function* sendLoginCreds(action) {
     if (data.code !== undefined) {
       throw data;
     } else {
+      const { accessToken } = data;
       yield put({
         type: 'LOGIN_SUCCEEDED',
-        payload: data,
+        payload: { email, accessToken},
       });
     }
   } catch (error) {

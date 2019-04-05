@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { getBooks, updateReviewedBook, regClear } from '../actions/actions'
 import { connect } from 'react-redux';
 import '../styles/styles.scss';
+import UserBar from '../components/UserBar/UserBar';
 
 export class Home extends Component {
   state = {
@@ -18,9 +19,10 @@ export class Home extends Component {
   }
 
   render() {
-    const { bookList } = this.props;
+    const { bookList, email } = this.props;
     return (
       <div id='home'>
+      <UserBar email={email} />
         <Header />
         <Content
           bookList={bookList}
@@ -39,11 +41,13 @@ Home.propTypes = {
   loading: PropTypes.bool.isRequired,
   updateReviewedBook: PropTypes.func.isRequired,
   bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  email: PropTypes.string,
 };
 
 const mapStateToProps = store => ({
   bookList: store.BookList.Books,
   loading: store.BookList.loading,
+  email: store.User.email,
 })
 
 const mapDispatchToProps = {
