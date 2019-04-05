@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default class LoginSheet extends Component {
 
@@ -29,7 +29,7 @@ export default class LoginSheet extends Component {
 
         <div className="field">
           <p className="control">
-            <button className="button is-success">
+            <button className="button is-success0" onClick={this.props.onLogin}>
               Bejelentkezem
             </button>
           </p>
@@ -40,5 +40,6 @@ export default class LoginSheet extends Component {
 }
 
 LoginSheet.propTypes = {
+  onLogin: PropTypes.func.isRequired,
 };
 

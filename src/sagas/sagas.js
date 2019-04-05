@@ -21,10 +21,26 @@ function* getBookList() {
 }
 
 function* sendLoginCreds(action) {
-  yield delay(100);
-  const url = `${process.env.FOB_SERVER}/users`;
-  const data = yield call(API.sendReg, url, action.payload);
-  console.log('data: ', data); //eslint-disable-line
+  try {
+    yield delay(100);
+    const url = `${process.env.FOB_SERVER}/authentication`;
+    const data = yield call(API.sendLogin, url, action.payload);
+    console.log('sendLoginCreds: ', data); //eslint-disable-line
+
+    if (data.code !== undefined) {
+      throw data;
+    } else {
+      yield put({
+        type: 'LOGIN_SUCCEEDED',
+        payload: data,
+      });
+    }
+  } catch (error) {
+    yield put({
+      type: 'LOGIN_FAILED',
+      payload: error,
+    });
+  }
 }
 
 function* sendRegCreds(action) {

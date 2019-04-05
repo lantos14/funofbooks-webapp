@@ -3,6 +3,8 @@ export default function User(state = {
   regSuccess: null,
   regErrorMsg: null,
   regerrorType: null,
+  loginSuccess: null,
+  token: null,
 }, action) {
   switch (action.type) {
     case 'REG_REQUESTED': {
@@ -36,6 +38,14 @@ export default function User(state = {
         regErrorMsg: null,
         regerrorType: null,
       };
+    }
+
+    case 'LOGIN_SUCCEEDED': {
+      return {
+        ...state,
+        loginSuccess: true,
+        token: action.payload.accessToken,
+      }
     }
 
     default:
