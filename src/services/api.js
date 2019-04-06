@@ -46,4 +46,17 @@ export function sendLogin(url, data) {
     });
 }
 
-
+export function getUsername(url, email, token) {
+  return fetch(`${url}?email=${email}`, {
+    method: 'GET',
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`,
+    },
+  })
+    .then(response => response.json())
+    .catch((error) => {
+      throw error;
+    });
+}

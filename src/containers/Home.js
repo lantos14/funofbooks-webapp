@@ -18,10 +18,10 @@ export class Home extends Component {
   }
 
   render() {
-    const { bookList, email } = this.props;
+    const { bookList, username } = this.props;
     return (
       <div id='home'>
-        <Header email={email}/>
+        <Header username={username}/>
         <Content
           bookList={bookList}
           updateReviewedBook={this.props.updateReviewedBook}
@@ -39,13 +39,13 @@ Home.propTypes = {
   loading: PropTypes.bool.isRequired,
   updateReviewedBook: PropTypes.func.isRequired,
   bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
-  email: PropTypes.string,
+  username: PropTypes.string,
 };
 
 const mapStateToProps = store => ({
   bookList: store.BookList.Books,
   loading: store.BookList.loading,
-  email: store.User.email,
+  username: store.User.username,
 })
 
 const mapDispatchToProps = {

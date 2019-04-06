@@ -32,9 +32,13 @@ function* sendLoginCreds(action) {
       throw data;
     } else {
       const { accessToken } = data;
+      // after succesful auth, fetch for username
+      const userUrl = `${process.env.FOB_SERVER}/users`;
+      const userResponse = yield call(API.getUsername, userUrl, email, accessToken)
+      const username = userResponse.data[0].name;
       yield put({
         type: 'LOGIN_SUCCEEDED',
-        payload: { email, accessToken},
+        payload: { username, email, accessToken},
       });
     }
   } catch (error) {

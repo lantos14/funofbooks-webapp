@@ -6,7 +6,7 @@ export default function User(state = {
   loginInProgress: false,
   loginSuccess: null,
   token: undefined,
-  userName: null,
+  username: null,
   email: null,
 }, action) {
   switch (action.type) {
@@ -55,6 +55,7 @@ export default function User(state = {
         loginInProgress: false,
         token: action.payload.accessToken,
         email: action.payload.email,
+        username: action.payload.username,
       }
     }
 

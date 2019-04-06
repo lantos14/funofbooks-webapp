@@ -13,7 +13,7 @@ const SideBar = (props) => {
           icon="user"
           text="Bejelentkezés"
           url="/login"
-          user={props.userEmail}
+          user={props.username}
         />
         <SideButton icon="book" text="Cikkek" url="/" />
       </div>
@@ -25,7 +25,7 @@ const SideBar = (props) => {
 }
 
 SideBar.propTypes = {
-  userEmail: PropTypes.string
+  username: PropTypes.string
 }
 
 export default SideBar;

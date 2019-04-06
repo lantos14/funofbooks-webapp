@@ -16,13 +16,13 @@ const Header = (props) => {
             </div>
           </div>
         </section>
-        <SideBar userEmail={props.email}/>
+        <SideBar username={props.username}/>
       </div>
     );
 }
 
 Header.propTypes = {
-  email: PropTypes.string
+  username: PropTypes.string
 }
 
 export default Header;
