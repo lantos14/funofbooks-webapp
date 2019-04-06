@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import 'bulma/css/bulma.css';
 import SideBar from '../home/SideBar';
 
-const Header = () => {
+const Header = (props) => {
     return (
       <div className='header-wrapper'>
       <header className='app-header' />
@@ -15,9 +16,13 @@ const Header = () => {
             </div>
           </div>
         </section>
-        <SideBar />
+        <SideBar userEmail={props.email}/>
       </div>
     );
+}
+
+Header.propTypes = {
+  email: PropTypes.string
 }
 
 export default Header;

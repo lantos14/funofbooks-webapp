@@ -5,7 +5,6 @@ import Footer from '../components/Footer';
 import { ReviewContent } from '../components/reviewPage/ReviewContent';
 import { getBooks } from '../actions/actions'
 import { connect } from 'react-redux';
-import UserBar from '../components/UserBar/UserBar';
 
 export class ReviewPage extends Component {
   state = {
@@ -22,7 +21,6 @@ export class ReviewPage extends Component {
     return (
       <div id="review-page">
         <div className="background"></div>
-        <UserBar />
         <Header backgroundSource="https://bit.ly/2Qnl9Dz"></Header>
         <ReviewContent article={article}></ReviewContent>
         <Footer />

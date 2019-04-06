@@ -6,6 +6,7 @@
   height: 60px;
   .left-panel {
     position: absolute;
+    display: flex;
     left: 0;
     .box {
       cursor: pointer;
@@ -16,10 +17,10 @@
       color: white;
       box-shadow: unset;
       &:hover {
-        filter: brightness(90%);
+        filter: brightness(80%);
       }
       &:active {
-        filter: brightness(110%);
+        filter: brightness(120%);
       }
       .media {
         padding-left: 20px;

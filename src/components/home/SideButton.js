@@ -8,7 +8,7 @@ import 'bulma/css/bulma.css';
 export class SideButton extends Component {
 
   handleOnClick = () => {
-    history.push('/');
+    history.push(this.props.url);
   }
 
   render() {
@@ -16,11 +16,18 @@ export class SideButton extends Component {
       <div className="box" onClick={this.handleOnClick}>
         <article className="media">
           <div className="media-left">
-          <i className={`fas fa-${this.props.icon}`}></i>
+            <i className={`fas fa-${this.props.icon}`}></i>
           </div>
           <div className="media-content">
             <div className="content">
-              <p>{this.props.text}</p>
+              <p>
+                {
+                  (this.props.text === 'Bejelentkezés' && this.props.user) ?
+                    this.props.user
+                    :
+                    this.props.text
+                }
+              </p>
             </div>
           </div>
         </article>
@@ -32,4 +39,6 @@ export class SideButton extends Component {
 SideButton.propTypes = {
   icon: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  user: PropTypes.string
 };

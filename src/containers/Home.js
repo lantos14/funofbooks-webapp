@@ -6,7 +6,6 @@ import Footer from '../components/Footer';
 import { getBooks, updateReviewedBook, regClear } from '../actions/actions'
 import { connect } from 'react-redux';
 import '../styles/styles.scss';
-import UserBar from '../components/UserBar/UserBar';
 
 export class Home extends Component {
   state = {
@@ -22,8 +21,7 @@ export class Home extends Component {
     const { bookList, email } = this.props;
     return (
       <div id='home'>
-      <UserBar email={email} />
-        <Header />
+        <Header email={email}/>
         <Content
           bookList={bookList}
           updateReviewedBook={this.props.updateReviewedBook}

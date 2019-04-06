@@ -5,7 +5,6 @@ import Footer from '../components/Footer';
 import { connect } from 'react-redux';
 import { loginRequested } from '../actions/actions'
 import LoginSheet from '../components/Login/LoginSheet';
-import UserBar from '../components/UserBar/UserBar';
 
 export class LoginPage extends Component {
 
@@ -23,7 +22,6 @@ export class LoginPage extends Component {
     return (
       <div id="registration-page">
         <div className="background"></div>
-        <UserBar email={this.props.email}/>
         <Header />
         <LoginSheet
           onLogin={this.login}

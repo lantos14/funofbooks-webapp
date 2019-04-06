@@ -7,7 +7,6 @@ import { history } from '../store/configureStore';
 import { regRequested } from '../actions/actions'
 import RegistrationSheet from '../components/registration/RegistrationSheet';
 import '../styles/styles.scss';
-import UserBar from '../components/UserBar/UserBar';
 
 export class RegistrationPage extends Component {
 
@@ -34,7 +33,6 @@ export class RegistrationPage extends Component {
     return (
       <div id="registration-page">
         <div className="background"></div>
-        <UserBar />
         <Header />
         <h1 className='title registration-title'>Regisztráció</h1>
         <RegistrationSheet
