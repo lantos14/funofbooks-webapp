@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
 import { Content } from '../components/home/Content';
 import Footer from '../components/Footer';
-import { getBooks, updateReviewedBook, regClear } from '../actions/actions'
+import { getBooks, updateReviewedBook, regClear, extractTokenData } from '../actions/actions'
 import { connect } from 'react-redux';
 import '../styles/styles.scss';
 
@@ -15,6 +15,10 @@ export class Home extends Component {
   componentDidMount() {
     this.props.getBooks();
     this.props.regClear();
+    const token = localStorage.getItem('TOKEN')
+    if (token) {
+      this.props.extractTokenData(token);
+    }
   }
 
   render() {
@@ -36,6 +40,7 @@ export class Home extends Component {
 Home.propTypes = {
   getBooks: PropTypes.func.isRequired,
   regClear: PropTypes.func.isRequired,
+  extractTokenData: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   updateReviewedBook: PropTypes.func.isRequired,
   bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -52,6 +57,7 @@ const mapDispatchToProps = {
   getBooks,
   updateReviewedBook,
   regClear,
+  extractTokenData,
 };
 
 export default connect(

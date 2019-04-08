@@ -5,7 +5,7 @@ export default function User(state = {
   regerrorType: null,
   loginInProgress: false,
   loginSuccess: null,
-  token: undefined,
+  token: localStorage.getItem('TOKEN'),
   username: null,
   email: null,
 }, action) {
@@ -78,6 +78,14 @@ export default function User(state = {
       return {
         ...state,
         token: undefined,
+      }
+    }
+
+    case 'EXTRACT_TOKEN_DATA_SUCCEEDED': {
+      return {
+        ...state,
+        email: action.payload.email,
+        username: action.payload.username,
       }
     }
 

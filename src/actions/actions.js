@@ -47,3 +47,10 @@ export function updateReviewedBook(bookId) {
     payload: bookId,
   };
 } 
+
+export function extractTokenData(token) {
+  return {
+    type: 'EXTRACT_TOKEN_DATA',
+    payload: token,
+  };
+} 
